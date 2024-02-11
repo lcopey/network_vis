@@ -1,0 +1,11 @@
+include network_vis/network_vis.min.js
+include network_vis/network_vis.min.js.map
+include network_vis/async-*.js
+include network_vis/async-*.js.map
+include network_vis/*-shared.js
+include network_vis/*-shared.js.map
+include network_vis/metadata.json
+include network_vis/package-info.json
+include README.md
+include LICENSE
+include package.json
