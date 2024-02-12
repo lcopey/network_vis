@@ -6,31 +6,28 @@
 \title{NetworkVis component}
 
 \description{
-ExampleComponent is an example component. It takes a property, `label`, and displays it. It renders an input with the property `value` which is editable by the user.
+
 }
 
 \usage{
-networkVis(id=NULL, edges=NULL, labelPosition=NULL, labelText=NULL,
-labelVisible=NULL, nodes=NULL, selectedEdgeId=NULL,
-selectedNodeId=NULL)
+networkVis(id=NULL, getEdges=NULL, getNetwork=NULL, getNodes=NULL,
+graph=NULL, label=NULL, style=NULL)
 }
 
 \arguments{
-\item{id}{Character. The ID used to identify this component in Dash callbacks.}
+\item{id}{Character. }
 
-\item{edges}{List of named lists. }
+\item{getEdges}{}
 
-\item{labelPosition}{Named list. }
+\item{getNetwork}{}
 
-\item{labelText}{Character. }
+\item{getNodes}{}
 
-\item{labelVisible}{Logical. }
+\item{graph}{Named list. }
 
-\item{nodes}{List of named lists. }
+\item{label}{Named list. }
 
-\item{selectedEdgeId}{Logical | numeric | character | named list | unnamed list. }
-
-\item{selectedNodeId}{Logical | numeric | character | named list | unnamed list. }
+\item{style}{Named list. }
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

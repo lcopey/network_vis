@@ -11,14 +11,16 @@ nodes = [{"id": n, "label": label} for n, label in enumerate(nodes)]
 
 network = network_vis.NetworkVis(
     id="network",
-    nodes=nodes,
-    edges=edges,
+    graph=dict(
+        nodes=nodes,
+        edges=edges,
+    )
 )
 output = html.Div(id="output")
 app.layout = html.Div([network, output], style={"height": "600px"})
 
 
-@callback(Output(output, "children"), Input(network, "selectedNodeId"))
+@callback(Output(output, "children"), Input(network, "id"))
 def display_output(value):
     return "You have entered {}".format(value)
 

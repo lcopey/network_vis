@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-networkVis <- function(id=NULL, edges=NULL, labelPosition=NULL, labelText=NULL, labelVisible=NULL, nodes=NULL, selectedEdgeId=NULL, selectedNodeId=NULL) {
+networkVis <- function(id=NULL, getEdges=NULL, getNetwork=NULL, getNodes=NULL, graph=NULL, label=NULL, style=NULL) {
     
-    props <- list(id=id, edges=edges, labelPosition=labelPosition, labelText=labelText, labelVisible=labelVisible, nodes=nodes, selectedEdgeId=selectedEdgeId, selectedNodeId=selectedNodeId)
+    props <- list(id=id, getEdges=getEdges, getNetwork=getNetwork, getNodes=getNodes, graph=graph, label=label, style=style)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@ networkVis <- function(id=NULL, edges=NULL, labelPosition=NULL, labelText=NULL, 
         props = props,
         type = 'NetworkVis',
         namespace = 'network_vis',
-        propNames = c('id', 'edges', 'labelPosition', 'labelText', 'labelVisible', 'nodes', 'selectedEdgeId', 'selectedNodeId'),
+        propNames = c('id', 'getEdges', 'getNetwork', 'getNodes', 'graph', 'label', 'style'),
         package = 'networkVis'
         )
 

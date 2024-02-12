@@ -1,79 +1,87 @@
 {
   "src/lib/components/NetworkVis.react.js": {
-    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "description": "",
     "displayName": "NetworkVis",
-    "methods": [],
+    "methods": [
+      {
+        "name": "patchEdges",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ edgesRemoved, edgesAdded, edgesChanged }",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "patchNodes",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ nodesRemoved, nodesAdded, nodesChanged }",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "updateGraph",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "The ID used to identify this component in Dash callbacks."
-      },
-      "nodes": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "object"
-          }
-        },
-        "required": false,
         "description": ""
       },
-      "edges": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "object"
-          }
-        },
-        "required": false,
-        "description": ""
-      },
-      "labelPosition": {
+      "graph": {
         "type": {
           "name": "object"
         },
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "{ x: 0, y: 0 }",
+          "value": "{}",
           "computed": false
         }
       },
-      "labelVisible": {
+      "style": {
         "type": {
-          "name": "bool"
+          "name": "object"
         },
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "false",
+          "value": "{ width: \"100%\", height: \"100%\" }",
           "computed": false
         }
       },
-      "labelText": {
+      "getNetwork": {
         "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "selectedNodeId": {
-        "type": {
-          "name": "any"
+          "name": "func"
         },
         "required": false,
         "description": ""
       },
-      "selectedEdgeId": {
+      "getNodes": {
         "type": {
-          "name": "any"
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "getEdges": {
+        "type": {
+          "name": "func"
         },
         "required": false,
         "description": ""
@@ -83,7 +91,14 @@
           "name": "func"
         },
         "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
       }
     }
   }
