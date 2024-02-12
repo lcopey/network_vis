@@ -1,22 +1,27 @@
+from dash import Dash, Input, Output, callback, html
+
 import network_vis
-from dash import Dash, callback, html, Input, Output
 
 app = Dash(__name__)
 
-app.layout = html.Div([
-    network_vis.NetworkVis(
-        id='input',
-        value='my-value',
-        label='my-label'
-    ),
-    html.Div(id='output')
-])
+nodes = "ABCDEFG"
+edges = "AB,BC,BE,FG,AF,DE,AG"
+edges = [{"from": nodes.index(i), "to": nodes.index(j)} for i, j in edges.split(",")]
+nodes = [{"id": n, "label": label} for n, label in enumerate(nodes)]
+
+network = network_vis.NetworkVis(
+    id="network",
+    nodes=nodes,
+    edges=edges,
+)
+output = html.Div(id="output")
+app.layout = html.Div([network, output], style={"height": "600px"})
 
 
-@callback(Output('output', 'children'), Input('input', 'value'))
+@callback(Output(output, "children"), Input(network, "selectedNodeId"))
 def display_output(value):
-    return 'You have entered {}'.format(value)
+    return "You have entered {}".format(value)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run_server(debug=True)

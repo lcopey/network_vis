@@ -3,7 +3,7 @@ import PropTypes, { object, } from 'prop-types';
 import { Network } from 'vis-network';
 import styled from 'styled-components';
 
-const PopUp = styled.label`
+const PopUp = styled.div`
         border: 1px solid #dedede;
         border-radius: 2px;
         background: #fefefeaa;
@@ -95,8 +95,7 @@ const NetworkVis = (props) => {
         network?.on('blurEdge', onBlur);
         network?.on('dragging', (event) => {
             setProps(props => ({ ...props, labelVisible: false }));
-        })
-
+        });
     }, [visJsRef, nodes, edges]);
 
     console.log(props.selectedEdgeId, props.selectedNodeId);
